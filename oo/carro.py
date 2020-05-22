@@ -44,28 +44,31 @@ O   L
     >>> # testando Direcao
     >>> direcao = Direcao()
     >>> direcao.valor
-    ‘Norte’
+    'Norte'
     >>> direcao.girar_a_direita()
     >>> direcao.valor
-    ‘Sul’
+    'Leste'
     >>> direcao.girar_a_direita()
     >>> direcao.valor
-    ‘Oeste’
+    'Sul'
     >>> direcao.girar_a_direita()
     >>> direcao.valor
-    ‘Norte’
+    'Oeste'
+    >>> direcao.girar_a_direita()
+    >>> direcao.valor
+    'Norte'
     >>> direcao.girar_a_esquerda()
     >>> direcao.valor
-    ‘Oeste’
+    'Oeste'
     >>> direcao.girar_a_esquerda()
     >>> direcao.valor
-    ‘Sul’
+    'Sul'
     >>> direcao.girar_a_esquerda()
     >>> direcao.valor
-    ‘Leste’
+    'Leste'
     >>> direcao.girar_a_esquerda()
     >>> direcao.valor
-    ‘Norte’
+    'Norte'
     >>> carro = Carro(direcao, motor)
     >>> carro.calcular_velocidade()
     0
@@ -79,16 +82,16 @@ O   L
     >>> carro.calcular_velocidade()
     0
     >>> carro.calcular_direcao()
-    ‘Norte’
+    'Norte'
     >>> carro.girar_a_direita()
     >>> carro.calcular_direcao()
-    ‘Leste’
+    'Leste'
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    ‘Norte’
+    'Norte'
     >>> carro.girar_a_esquerda()
     >>> carro.calcular_direcao()
-    ‘Oeste’
+    'Oeste'
 
 """
 
@@ -123,7 +126,7 @@ OESTE = 'Oeste'
 
 class Direcao:
     rotacao_a_direita_dct = {NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE}
-    rotacao_a_esquerda_dct = {NORTE: OESTE, OESTE: SUL, SUL: LESTE, LESTE: NORTE}
+    rotacao_a_esquerda_dct = {NORTE: OESTE, LESTE: NORTE, SUL: LESTE, OESTE: SUL}
 
     def __init__(self):
         self.valor = NORTE
